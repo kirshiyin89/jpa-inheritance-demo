@@ -20,10 +20,14 @@ public class DemoService {
     }
 
     public List<ConcreteEntityA> getA() {
-        return concreteARepository.findAll();
+        return concreteARepository.findByType("type");
     }
 
     public List<ConcreteEntityB> getB() {
-        return concreteBRepository.findAll();
+        return concreteBRepository.findByType("type");
+    }
+
+    public ConcreteEntityB getBFromNumber(int number) {
+        return concreteBRepository.findByNumber(number);
     }
 }
